@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import mn.edu.num.icd10_service.domain.ICD10Code;
+import mn.edu.num.icd10_service.domain.Chapter;
+import mn.edu.num.icd10_service.domain.Subcode;
 import mn.edu.num.icd10_service.service.ICD10Service;
 
 @RestController
@@ -21,12 +22,12 @@ public class ICD10Controller {
 	}
 
 	@GetMapping
-	public List<ICD10Code> getAllCodes() {
+	public List<Chapter> getAllCodes() {
 		return service.getAllCodes();
 	}
 
 	@GetMapping("/{code}")
-	public ICD10Code getByCode(@PathVariable String code) {
+	public Chapter getByCode(@PathVariable String code) {
 		return service.findByCode(code);
 	}
 }

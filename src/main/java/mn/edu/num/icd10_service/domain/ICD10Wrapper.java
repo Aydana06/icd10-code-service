@@ -4,13 +4,10 @@ import java.util.List;
 
 public class ICD10Wrapper {
 
-	private List<ICD10Code> codes;
-
-	public List<ICD10Code> getCodes() {
-		return codes;
+	private List<Chapter> chapters;
+	
+	public List<Chapter> getChapters(){
+		return chapters; 
 	}
 
-	public void setCodes(List<ICD10Code> codes) {
-		this.codes = codes;
-	}
 }

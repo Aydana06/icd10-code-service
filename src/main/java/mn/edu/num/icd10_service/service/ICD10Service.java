@@ -4,7 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import mn.edu.num.icd10_service.domain.ICD10Code;
+import mn.edu.num.icd10_service.domain.Chapter;
+import mn.edu.num.icd10_service.domain.Subcode;
 import mn.edu.num.icd10_service.repository.ICD10Repository;
 
 @Service
@@ -16,11 +17,11 @@ public class ICD10Service {
 		this.repository = repository;
 	}
 
-	public List<ICD10Code> getAllCodes() {
+	public List<Chapter> getAllCodes() {
 		return repository.findAll();
 	}
 
-	public ICD10Code findByCode(String code) {
-		return repository.findAll().stream().filter(c -> c.getCode().equals(code)).findFirst().orElse(null);
+	public Chapter findByCode(String code) {
+		return repository.findAll().stream().filter(c -> c.chapter().equals(code)).findFirst().orElse(null);
 	}
 }
