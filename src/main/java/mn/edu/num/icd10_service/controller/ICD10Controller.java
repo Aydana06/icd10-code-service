@@ -6,12 +6,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * ICD-10 кодын REST controller.
- * GET /api/icd10 — бүх chapter жагсаалтыг буцаана.
- * suggest-service өмнө нь энд HTTP дуудлага хийдэг байсан.
- * Одоо Kafka ашиглах тул энэ endpoint зөвхөн шалгах зорилгоор ашиглагдана.
- */
 @RestController
 @RequestMapping("/api/icd10")
 public class ICD10Controller {
@@ -23,7 +17,7 @@ public class ICD10Controller {
     }
 
     /**
-     * Бүх ICD-10 chapter жагсаалт.
+     * Бүх ICD-10 жагсаалт.
      * GET /api/icd10
      */
     @GetMapping
@@ -34,7 +28,7 @@ public class ICD10Controller {
     /**
      * Тодорхой chapter-г код-оор хайна.
      * GET /api/icd10/{code}
-     * @param code  chapter код — жишээ: "I"
+     * @param code chapter код — жишээ: "I"
      */
     @GetMapping("/{code}")
     public Chapter getByCode(@PathVariable String code) {
