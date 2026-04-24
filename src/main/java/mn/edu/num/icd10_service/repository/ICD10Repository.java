@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Repository;
 
+import mn.edu.num.icd10_service.domain.Category;
 import mn.edu.num.icd10_service.domain.Chapter;
 import mn.edu.num.icd10_service.domain.ICD10Wrapper;
 import tools.jackson.databind.ObjectMapper;

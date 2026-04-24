@@ -1,4 +1,4 @@
-package com.example.demo;
+package mn.edu.num.icd10_service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

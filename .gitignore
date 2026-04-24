@@ -3,7 +3,10 @@
 .factorypath
 .project
 .settings
-target
+/target
 .idea
 HELP.md
 application.properties
+.env
+src/main/resources/application.properties
+

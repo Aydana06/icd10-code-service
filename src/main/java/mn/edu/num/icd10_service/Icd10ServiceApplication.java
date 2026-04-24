@@ -9,5 +9,4 @@ public class Icd10ServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(Icd10ServiceApplication.class, args);
 	}
-
 }
