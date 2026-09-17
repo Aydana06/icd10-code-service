@@ -14,19 +14,28 @@ import mn.edu.num.icd10_service.service.ICD10Service;
 @RequestMapping("/api/icd10")
 public class ICD10Controller {
 
-	private final ICD10Service service;
+    private final ICD10Service service;
 
-	public ICD10Controller(ICD10Service service) {
-		this.service = service;
-	}
+    public ICD10Controller(ICD10Service service) {
+        this.service = service;
+    }
 
-	@GetMapping
-	public List<Chapter> getAllCodes() {
-		return service.getAllCodes();
-	}
+    /**
+     * Бүх ICD-10 жагсаалт.
+     * GET /api/icd10
+     */
+    @GetMapping
+    public List<Chapter> getAllCodes() {
+        return service.getAllCodes();
+    }
 
-	@GetMapping("/{code}")
-	public Chapter getByCode(@PathVariable String code) {
-		return service.findByCode(code);
-	}
+    /**
+     * Тодорхой chapter-г код-оор хайна.
+     * GET /api/icd10/{code}
+     * @param code chapter код — жишээ: "I"
+     */
+    @GetMapping("/{code}")
+    public Chapter getByCode(@PathVariable String code) {
+        return service.findByCode(code);
+    }
 }
