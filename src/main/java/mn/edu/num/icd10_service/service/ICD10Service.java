@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import mn.edu.num.icd10_service.domain.Chapter;
+import mn.edu.num.icd10_service.exception.ICD10NotFoundException;
 import mn.edu.num.icd10_service.repository.ICD10Repository;
 
 @Service
@@ -21,8 +22,7 @@ public class ICD10Service {
 	}
 
 	public Chapter findByCode(String code) {
-		return repository.findAll().stream()
-				.filter(c -> c.chapter().equals(code))
-				.findFirst().orElse(null);
+		return repository.findAll().stream().filter(c -> c.chapter().equals(code)).findFirst()
+				.orElseThrow(() -> new ICD10NotFoundException(code));
 	}
 }
